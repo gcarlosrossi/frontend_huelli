@@ -1,0 +1,46 @@
+flowchart TD
+
+MAIN["main.jsx"] --> APP["App.jsx"]
+
+APP --> PUBLIC["PublicLayout"]
+APP --> AUTH["AuthLayout"]
+APP --> PRIVATE["PrivateLayout"]
+
+PUBLIC --> WELCOME["Welcome"]
+
+AUTH --> LOGIN["Login"]
+AUTH --> SIGNUP["SignUp"]
+
+PRIVATE --> NAVBAR["NavBar"]
+PRIVATE --> MOBILE["MobileNavBar"]
+
+PRIVATE --> HOME["Home"]
+PRIVATE --> ADOPT["Adopt"]
+PRIVATE --> REPORT["Report"]
+PRIVATE --> CHAT["Chat"]
+PRIVATE --> PROFILE["Profile"]
+
+HOME --> HOMEHEADER["HomeHeader"]
+HOME --> FEED["FeedCard"]
+HOME --> SIDEBAR["HomeSidebar"]
+
+ADOPT --> ADOPTHEADER["AdoptHeader"]
+ADOPT --> ADOPTFILTER["AdoptFilters"]
+ADOPT --> ADOPTCARD["AdoptCard"]
+
+REPORT --> REPORTHEADER["ReportHeader"]
+REPORT --> CONDITION["ConditionToggle"]
+REPORT --> PETSSLIDER["PetsSlider"]
+REPORT --> LOCATION["YourLocation"]
+
+CHAT --> CHATHEADER["ChatHeader"]
+CHAT --> CHATCARD["ChatCard"]
+
+PROFILE --> PROFILEHEADER["ProfileHeader"]
+PROFILE --> MYPETS["MyPets"]
+PROFILE --> MYPOSTS["MyPosts"]
+
+STORE["useAuthStore"]
+STORE -.-> LOGIN
+STORE -.-> SIGNUP
+STORE -.-> PRIVATE
